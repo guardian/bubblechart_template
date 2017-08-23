@@ -77,7 +77,7 @@ var app = {
 
 	tiptext: null,
 
-	colours: ["#f46d43","#c51b7d","#542788","#66c2a5","#3288bd"],
+	colours: ["#005689","#b82266","#ff9b0b","#66a998","#aad8f1"],
 
 	cats: null,
 
