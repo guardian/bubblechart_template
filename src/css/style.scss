@@ -1,0 +1,147 @@
+/*
+
+-------------------------
+
+This is a variable 
+
+$isVar
+
+-------------------------
+
+variable types
+
+numbers
+strings
+colors
+booleans
+nulls
+lists
+
+-------------------------
+
+Nested styles
+
+.content {
+  
+  p {
+
+  }
+
+  a {
+
+    &:hover { // The & means the styling will be applied to the parent tag
+      
+    }
+
+  }
+
+}
+
+-------------------------
+
+Mixins
+
+// Mixins let you define common properties once so the can be resused when you need them.
+
+@mixin commonStyles { // You ALWAYS need to use the @mixin directive to define the properties
+  
+}
+
+// Use it like this 
+
+header {
+  @include commonStyles
+}
+
+-------------------------
+
+Mixins with agrguments
+
+@mixin customBorder ($width, $color, $style) {
+  border: {
+    width: $width;
+    color: $color;
+    style: $style;
+  }
+}
+
+#myTarget {
+  @include customBorder(3px, blue, dotted);
+}
+
+// Using named arguments with defaults
+
+@mixin customBorder2 ($width: 1px, $color: red, $style: dotted) {
+  border: {
+    width: $width;
+    color: $color;
+    style: $style;
+  }
+}
+
+
+-------------------------
+
+Operations
+
+$basepadding: 10px;
+
+header {
+  padding: ($basepadding+10)/2
+}
+
+Add colors together
+
+color: red + green;
+
+-------------------------
+
+Conditional operator
+
+ gender: boy;
+
+$myColor: if($gender=="boy", #00f, #f00);
+
+-------------------------
+
+Functions
+
+color functions
+
+//Darken & Lighten
+darken( $base-color, 10% )
+lighten( $base-color, 10% )
+
+// Saturate, & Desaturate
+saturate( $base-color, 20% )
+desaturate( $base-color, 20% )
+
+// Adjust-hue
+adjust-hue( $base-color, 20% )
+
+// Adding Alpha Transparency
+rgba( $base-color, .7 )
+
+Tint & Shade
+tint( $base-color, 10% )
+shade( $base-color, 10% )
+
+//Sass Functions Cheat Sheet
+//https://gist.github.com/AllThingsSmitty/3bcc79da563df756be46
+
+-------------------------
+
+Import stylesheets
+
+@import "filename.scss";
+
+-------------------------
+
+*/
+
+@import "d3-tip.scss";
+@import "gu-aus.scss";
+@import "gu-grid.scss";
+@import "main.scss";
+@import "slider.scss";
+@import "tips.scss";

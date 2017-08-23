@@ -1,0 +1,91 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.y {
+	margin-left: 20px;
+}
+
+.tipText {
+	font-size:0.9rem;
+	color:#FFF;
+	font-family:'Guardian Text Sans Web', 'Agate Sans', sans-serif;
+}
+
+
+#key {
+	width: 100%;
+}
+
+.category_legend {
+	width: 50%;
+	float: left;
+}
+
+@media (min-width: 600px) {
+
+	.category_legend {
+		margin-top: 15px;
+	}
+
+}
+
+
+#circle_legend {
+	width: 50%;
+	float: left;
+}
+
+.keyText {
+	font-size:0.8rem;
+}
+
+.keyDiv {
+	display: inline-block;
+	margin-left:10px;
+	float: left;
+}
+
+.keyDiv .keyCircle:first-of-type {
+    margin-left:0;
+}
+
+.keyCircle {
+	width:12px;
+	height:12px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.greyedOut {
+	opacity: 0.2
+}
+
+.currentyear {
+	background-color: black;
+	color: white
+}
+
+@media (max-width: 750px) {
+
+	.chartSans {
+		font-size:0.7rem;
+	}
+
+}
+
+.tooltip {
+  	position: absolute;
+  	width: 200px;
+  	pointer-events: none;
+	background-color: white;
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+	padding: 10px;
+	line-height: 1.1rem;
+	font-size: 0.9rem;
+}
