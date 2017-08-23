@@ -50,11 +50,11 @@ window.init = function init(el, config) {
 
 			}
 
-			// Set the scatterplot chart title using the Googledoc value
+			// Set the bubblechart title using the Googledoc value
 			d3.select(".chartTitle").html(app.settings[0].title);
 
 			// Specify the data source using the Googledoc value
-			d3.select("#scatterplot_chart_data_source").html(app.settings[0].source);
+			d3.select("#chart_data_source").html(app.settings[0].source);
 
         	app.initialize()
 
@@ -108,13 +108,15 @@ var app = {
 
 		var categories = [];
 
-		app.database.forEach(function(item) {
+		app.database.forEach( (item)  => {
 
 			categories.indexOf(item[app.cats]) === -1 ? categories.push(item[app.cats]) : '' ;
 
 		})
 
-		var html = '<div class="category_legend">';
+		var html = '<div class="legendary"><strong>' + app.cats + '</strong></div><div class="legendary"><strong>' + app.size + '</strong></div>';
+
+		html += '<div class="legendary">';
 		
 		for (var i = 0; i < categories.length; i++) {
 
@@ -131,7 +133,7 @@ var app = {
 
 		}
 
-		html += '</div><div id="circle_legend"></div>'
+		html += '</div><div id="circle_legend" class="legendary"></div>'
 
 		d3.select('#key').html(html);
 
@@ -139,7 +141,7 @@ var app = {
 
 	colorize: function(state) {
 
-		var target = app.categories.filter(function(value){
+		var target = app.categories.filter( (value) => {
 			return value.name == state
 		})
 
@@ -171,14 +173,11 @@ var app = {
 
 	initialize: function() {
 
-		window.addEventListener('resize', function() {
-			location.reload();
-		})
+		window.addEventListener('resize', () => location.reload())
 
-		var width = document.querySelector("#circle_chart").getBoundingClientRect().width,
-		    padding = 2;
+		var width = document.querySelector("#circle_chart").getBoundingClientRect().width, padding = 2;
 
-		app.database.forEach(function (d) {
+		app.database.forEach( (d) => {
 			d[app.x] = +d[app.x];
 		});
 
@@ -206,7 +205,7 @@ var app = {
 
 		var circleLegend = d3.select("#circle_legend").append("svg")
 		  .attr("width", document.querySelector("#circle_legend").getBoundingClientRect().width)
-		  .attr("height", (app.scale[2] * multiplier)/100*105)
+		  .attr("height", ((app.scale[2] * multiplier)/100*105)+20)
 
 		var circleLegendUnit = document.querySelector("#circle_legend").getBoundingClientRect().width / 6
 
@@ -225,14 +224,31 @@ var app = {
 			  .attr("stroke", "#aca7a7")
 			  .attr("stroke-dasharray","2,2")
 
-			g.append("text")
-			  .attr("class", "cirlelabels")
-			  .attr("dx", (((app.scale[i]/2) * multiplier < 15) ? (((app.scale[i]/2) * (multiplier * 2)) + 5) :  0 ))
-			  .attr("dy", 5)
-			  .attr("text-anchor","middle")
-			  .text(app.scale[i])
-			  .style("font-size","0.6rem")
-			  .attr("fill", "#767676")
+			  if (width < 600) {
+
+				g.append("text")
+				  .attr("class", "cirlelabels")
+				  .attr("dx", 0)
+				  .attr("dy", ((app.scale[2] * multiplier)/2) +15)
+				  .attr("text-anchor","middle")
+				  .text(app.scale[i])
+				  .style("font-size","0.6rem")
+				  .attr("fill", "#767676")
+
+			  } else {
+
+				g.append("text")
+				  .attr("class", "cirlelabels")
+				  .attr("dx", (((app.scale[i]/2) * multiplier < 15) ? (((app.scale[i]/2) * (multiplier * 2)) + 5) :  0 ))
+				  .attr("dy", 5)
+				  .attr("text-anchor","middle")
+				  .text(app.scale[i])
+				  .style("font-size","0.6rem")
+				  .attr("fill", "#767676")
+
+			  }
+
+
 
 		}
 

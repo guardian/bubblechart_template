@@ -1,27 +1,4 @@
 @import "fonts";
-
-@import "d3-tip.scss";
 @import "gu-aus.scss";
 @import "gu-grid.scss";
 @import "main.scss";
-@import "slider.scss";
-@import "tips.scss";
-
-
-svg {
-  font: 10px sans-serif;
-}
-
-.x.axis .domain {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.interactive-embed {
-}
-
-
-#circle_chart {
-
-}

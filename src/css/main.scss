@@ -1,78 +1,74 @@
-.axis path,
-.axis line {
+
+
+
+.x.axis .domain {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-.y {
-	margin-left: 20px;
-}
+.interactive-embed {
 
-.tipText {
-	font-size:0.9rem;
-	color:#FFF;
-	font-family:'Guardian Text Sans Web', 'Agate Sans', sans-serif;
-}
+	.immersive {
 
+		.axis path,
+		.axis line {
+		  fill: none;
+		  stroke: #000;
+		  shape-rendering: crispEdges;
+		}
 
-#key {
-	width: 100%;
-}
+		#key {
+			width: 100%;
+		}
 
-.category_legend {
-	width: 50%;
-	float: left;
-}
+		.legendary {
+			width: 50%;
+			float: left;
+		}
 
-@media (min-width: 600px) {
+		.legendary strong {
+			font-weight: 700;
+		}
 
-	.category_legend {
-		margin-top: 15px;
-	}
+		.keyText {
+			font-size:0.8rem;
+		}
 
-}
+		.keyDiv {
+			display: inline-block;
+			margin-left:10px;
+			float: left;
+		}
 
+		.keyDiv .keyCircle:first-of-type {
+		    margin-left:0;
+		}
 
-#circle_legend {
-	width: 50%;
-	float: left;
-}
+		.keyCircle {
+			width:12px;
+			height:12px;
+			border-radius: 50%;
+			display: inline-block;
+		}
 
-.keyText {
-	font-size:0.8rem;
-}
+		.greyedOut {
+			opacity: 0.2
+		}
 
-.keyDiv {
-	display: inline-block;
-	margin-left:10px;
-	float: left;
-}
+		.currentyear {
+			background-color: black;
+			color: white
+		}
 
-.keyDiv .keyCircle:first-of-type {
-    margin-left:0;
-}
+		@media (max-width: 750px) {
 
-.keyCircle {
-	width:12px;
-	height:12px;
-	border-radius: 50%;
-	display: inline-block;
-}
+			.chartSans {
+				font-size:0.7rem;
+			}
 
-.greyedOut {
-	opacity: 0.2
-}
+		}
 
-.currentyear {
-	background-color: black;
-	color: white
-}
-
-@media (max-width: 750px) {
-
-	.chartSans {
-		font-size:0.7rem;
 	}
 
 }
@@ -87,5 +83,8 @@
 	border-style: solid;
 	padding: 10px;
 	line-height: 1.1rem;
+	font-family:'Guardian Text Sans Web', 'Agate Sans', sans-serif;
 	font-size: 0.9rem;
 }
+
+
